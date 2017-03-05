@@ -1,0 +1,15 @@
+- var items = ['Выбор порогов', 'Стоимость', 'Пример монтажа', 'Отзывы', 'Вопросы-ответы']
+
+.header-header
+  .w.fh
+    .c.c9.header-menu-wrapper
+        .header-logo
+        nav.header-menu
+          each item in items
+            div.header-menu-item.vc
+              .header-menu-item-inner=item
+        a.header-close(href='#'): .header-close-icon
+    .c.c3.fh
+      a.header-hamburger(href='#')
+      .header-phone
+        .header-phone-number 8 800 777-00-55

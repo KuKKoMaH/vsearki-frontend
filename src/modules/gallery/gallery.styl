@@ -1,0 +1,38 @@
+@import "flickity/css/flickity.css"
+@import "magnific-popup/dist/magnific-popup.css"
+
+.container
+  display: block
+  //overflow: hidden
+  //height: 143px
+  img
+    max-width: none
+    display: block
+
+.item
+  position: relative
+  cursor: pointer
+  &:after, &:before
+    content ''
+    display: block
+    position: absolute
+    opacity: 0
+    anim()
+
+  &:before
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: rgba(black, .5)
+
+  &:after
+    background: url(sprites/sprite-zoom.svg)
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    //opacity: .4
+
+  &:hover
+    &:after, &:before
+      opacity: 1
