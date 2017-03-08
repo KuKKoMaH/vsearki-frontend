@@ -1,3 +1,5 @@
+include ../city/city
+
 .slide-container: .slide-content.fh
   .w
     .c.c4: .slide-left
@@ -7,12 +9,13 @@
         |Принимаем заявки #[br]
         |круглосуточно
     .c.c4
+      .slide-city: +city()
     .c.c4: .slide-right
       .slide-hours
         | Бесплатно со всех номеров РФ #[br]
         | Прием заказов с 9 до 21
       br
-      button.slide-button Заказать обратный звонок
+      a.slide-button.popup-opener(href='#callback') Заказать обратный звонок
 
   .w.fh.slide-center
     .c.c12.slide-vc

@@ -1,0 +1,18 @@
+include ../button/button
+
+mixin popup(id, title, text, button)
+  .popup-wrapper(id=id)
+    .popup-header
+      .popup-title=title
+    .popup-body
+      .popup-selected
+      .popup-text=text
+      form
+        input(type='hidden' name='city')
+        input(type='hidden' name='brand')
+        input(type='hidden' name='model')
+        input(type='hidden' name='generation')
+        input(type='hidden' name='body')
+        input(type='hidden' name='count')
+        .popup-input-wrapper: input.popup-input
+        .popup-button: +button()=button

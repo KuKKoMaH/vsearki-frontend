@@ -17,4 +17,4 @@ include ../button/button
         .delivery-text
           = text
           if(i == 0)
-            .delivery-button: +button() Оставить заявку
+            .delivery-button: +button('a', '#callback')(class='popup-opener') Оставить заявку
