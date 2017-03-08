@@ -8,11 +8,11 @@ mixin popup(id, title, text, button)
       .popup-selected
       .popup-text=text
       form
-        input(type='hidden' name='city')
-        input(type='hidden' name='brand')
-        input(type='hidden' name='model')
-        input(type='hidden' name='generation')
-        input(type='hidden' name='body')
-        input(type='hidden' name='count')
-        .popup-input-wrapper: input.popup-input
+        input.popup-city(type='hidden' name='city')
+        input.popup-car(type='hidden' name='brand')
+        input.popup-car(type='hidden' name='model')
+        input.popup-car(type='hidden' name='generation')
+        input.popup-car(type='hidden' name='body')
+        input.popup-car(type='hidden' name='count')
+        .popup-input-wrapper: input.popup-input(type='tel')
         .popup-button: +button()=button

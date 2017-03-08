@@ -6,6 +6,7 @@ var $selects = $('.' + styles.city.select).selectize({
     $selects.each(function () {
       if (this.selectize.getValue() !== value)
         this.selectize.setValue(value);
-    })
+    });
+    $('.' + styles.popup.city).val(value);
   }
 });
