@@ -82,3 +82,16 @@ a
     .c{$col}-md
       @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1)
         width: round((100 / $cols-number * $col)%, 3)
+
+  .screen-reader-response
+    display: none
+
+  .wpcf7-not-valid-tip
+    position: absolute
+    font-size: 14px
+    color: scarlet
+    top: 100%
+
+  .wpcf7-response-output
+    font-size: 15px
+    margin-top: 8px

@@ -8,10 +8,10 @@ mixin form(withCity)
     form.form-form
       if (withCity)
         +city()
-      .form-select-wrapper: select.form-select(data-placeholder='марка' name='brand' data-type='brand')
-      .form-select-wrapper: select.form-select(data-placeholder='модель' name='model' data-type='model')
-      .form-select-wrapper: select.form-select(data-placeholder='поколение' name='generation' data-type='generation')
-      .form-select-wrapper: select.form-select(data-placeholder='кузов' name='body' data-type='body')
+      .form-select-wrapper: select.form-select(data-placeholder='марка' name='brand' data-type='brand' disabled)
+      .form-select-wrapper: select.form-select(data-placeholder='модель' name='model' data-type='model' disabled)
+      .form-select-wrapper: select.form-select(data-placeholder='поколение' name='generation' data-type='generation' disabled)
+      .form-select-wrapper: select.form-select(data-placeholder='кузов' name='body' data-type='body' disabled)
       .form-select-wrapper: select.form-select(data-placeholder='Кол-во' name='count' data-type='count')
         option Комплект
         option Левый
