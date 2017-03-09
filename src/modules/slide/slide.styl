@@ -1,7 +1,8 @@
 .container
   padding-top: 90px
-  height 100%
-  min-height: 650px
+  padding-bottom: 300px
+  //height 100%
+  //min-height: 650px
   background-color beige-two
   position: relative
   overflow: hidden
@@ -42,20 +43,8 @@
   z-index: 1
 
 .center
-  margin-top: -90px
-  &:after
-    content: ''
-    vc()
-    height: 100%
-
-  @media (max-width: $breakpoint-sm)
-    margin-top: 20px
-
-    &:after
-      display: none
-
-.vc
-  vertical-align: middle
+  //margin-top: -90px
+  margin-top: 20px
 
 .mail
   font-size: .9em
@@ -125,7 +114,7 @@
 .text
   text-align: center
 
-  @media (max-width: $breakpoint-sm)
+  @media (max-width: $breakpoint-sm - 1)
     font-size: .8em
 
 .title

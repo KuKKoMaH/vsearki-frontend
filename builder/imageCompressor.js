@@ -9,7 +9,7 @@ var config = require('./config');
 module.exports = function() {
   return imagemin([config.imgPath + '/*.{jpg,jpeg,png}'], config.imgPath, {
     plugins: [
-      imageminMozjpeg({ quality: 80 }),
+      imageminMozjpeg({ quality: 90 }),
       imageminPngquant({quality: '65-80'})
     ]
   });
