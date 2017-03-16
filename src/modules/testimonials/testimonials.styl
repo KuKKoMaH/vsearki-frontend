@@ -70,3 +70,17 @@
 
   &:hover
     text-decoration: none
+
+.video
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    background: url(sprites/sprite-video.svg)
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    anim()
+
+  &:hover:after
+    opacity: .8

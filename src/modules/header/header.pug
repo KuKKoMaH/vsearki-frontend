@@ -8,12 +8,12 @@
 .header-header
   .w.fh
     .c.c9.header-menu-wrapper
-        .header-logo
-        nav.header-menu
-          each item in items
-            .header-menu-item.vc
-              a.header-menu-item-inner(href=item.href)=item.title
-        a.header-close(href='#'): .header-close-icon
+      a.header-logo(href='#top')
+      nav.header-menu
+        each item in items
+          .header-menu-item.vc
+            a.header-menu-item-inner(href=item.href)=item.title
+      a.header-close(href='#'): .header-close-icon
     .c.c3.fh
       a.header-hamburger(href='#')
       .header-phone

@@ -3,15 +3,19 @@
 
 .container
   display: block
-  //overflow: hidden
+  overflow: hidden
   //height: 143px
   img
-    max-width: none
+    width: 100%
     display: block
+    height: auto
+    margin: 0 auto
 
 .item
   position: relative
   cursor: pointer
+  width: (100/6)%
+  padding: 0
   &:after, &:before
     content ''
     display: block
@@ -36,3 +40,11 @@
   &:hover
     &:after, &:before
       opacity: 1
+
+  @media (max-width: $breakpoint-md) {
+    width: (100/4)%
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    width: (100/2)%
+  }

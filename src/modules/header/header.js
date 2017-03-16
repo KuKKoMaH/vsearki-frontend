@@ -9,7 +9,7 @@ $('.' + styles.header.hamburger + ', .' + styles.header.close).on('click', funct
   menu.toggleClass(activeClass);
 });
 
-$('.' + styles.header['menu-item-inner']).smoothScroll({
+$('.' + styles.header.header + ' a').smoothScroll({
   // offset: -60,
   beforeScroll: function() {
     menu.removeClass(activeClass);
