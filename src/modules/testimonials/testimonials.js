@@ -16,5 +16,14 @@ $container.magnificPopup({
     elementParse: function (item) {
       item.type = item.el.data('type') || 'image';
     }
+  },
+  iframe: {
+    patterns: {
+      youtube: {
+        index: 'youtube.com',
+        id:    'v=',
+        src:   '//www.youtube.com/embed/%id%?autoplay=1&rel=0&showinfo=0'
+      },
+    }
   }
 });
