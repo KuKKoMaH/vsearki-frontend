@@ -127,7 +127,9 @@ function buildJs(brebuildCssResult) {
     obj[module.name] = module.module;
     return obj;
   }, {});
-  return js(pages, { styles }).then(() => brebuildCssResult);
+  return js(pages, { styles })
+    .then(() => brebuildCssResult)
+    .catch(err => console.log(err))
 }
 
 /**

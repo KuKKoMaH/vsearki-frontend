@@ -1,0 +1,80 @@
+.container
+  position: relative
+  background: #dddddd
+  display: flex
+  height: 85px
+  border-radius 4px 4px 0 0
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction: column
+    margin: 0 -15px
+    height: auto
+    padding: 12px 0
+    border-radius: 0
+
+.item
+  flex: 1
+  position: relative
+  text-align: left
+  display: flex
+  align-items: center
+  justify-content: center
+  font-weight: 500
+  padding-right: 56px
+  padding-left: 8px
+  @media (max-width: $breakpoint-sm - 1)
+    padding-left: 0 !important
+    padding-right: 0 !important
+    margin-bottom: 8px
+    br
+      display: none
+
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    background: #f8f5f1
+    width: 12px
+    height: 130%
+    right: -6px
+    top: 0
+    transform: rotate(30deg)
+    transform-origin: 100% 0
+
+    @media (max-width: $breakpoint-sm - 1)
+      display: none
+
+  &:first-child
+    padding-left: 20px
+
+  &:last-child
+    padding-right: 20px
+
+  &:last-child:after
+    display: none
+
+  &:before
+    content: ''
+    vc()
+    @media (max-width: $breakpoint-md - 1)
+      display: none
+
+.icon1:before
+  background: url(modules/bullets/bullet-1.png)
+  width: 82px
+  height: 83px
+  margin-right: 24px
+  margin-top: -43px
+
+.icon2:before
+  background: url(modules/bullets/bullet-2.png)
+  width: 86px
+  height: 83px
+  margin-right: 24px
+  margin-top: -40px
+
+.icon3:before
+  background: url(modules/bullets/bullet-3.png)
+  width: 91px
+  height: 79px
+  margin-right: 24px
+  margin-top: -39px

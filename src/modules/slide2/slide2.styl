@@ -1,0 +1,134 @@
+.container
+  padding-top: 90px
+  background-color beige-two
+  position: relative
+  overflow: hidden
+  color greyish-brown
+  padding-bottom: 300px
+
+  @media (max-width: $breakpoint-sm)
+    padding-top: 80px
+    height: auto
+    min-height: auto
+    padding-bottom: 2em
+
+  &:before
+    content: ''
+    position: absolute
+    background-image: url(modules/slide2/car.jpg)
+    width: 800px
+    height: 272px
+    top: 230px
+    left: 50%
+    margin-left: -170px
+
+    @media (max-width: $breakpoint-lg - 1)
+      margin-left: -100px
+
+    @media (max-width: $breakpoint-md - 1)
+      margin-left: 0
+
+    @media (max-width: $breakpoint-sm - 1)
+      background-image: none
+      display: none
+
+.content
+  position: relative
+  z-index: 1
+
+.contacts
+  display: flex
+  align-items: center
+  margin-bottom: 2.8em
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction: column
+
+.mail
+  font-size: .9em
+  font-weight: 600
+  color: black  
+
+.work
+  margin-left: 24px
+  margin-top: 12px
+  font-size: .8em
+  display: inline-block
+  text-align: left
+  @media (max-width: $breakpoint-sm - 1)
+    margin-left: 0
+
+  &:before
+    content: ''
+    float: left
+    display: block
+    margin-top: 3px
+    margin-right: 12px
+    background-image: url(sprites/sprite-24.svg)
+
+.title
+  font-size: 3em
+  letter-spacing: 4px
+  line-height: 1
+  font-weight: 700
+  margin: 0 0 .3em
+
+  @media (max-width: $breakpoint-md - 1)
+    letter-spacing: 0px
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: center
+    font-size: 2.25em
+
+.subtitle
+  font-size: 2em
+  letter-spacing: 2px
+  font-weight: 200
+  line-height: 1.05em
+  margin: 0 0 1.3em
+
+  @media (max-width: $breakpoint-md - 1)
+    letter-spacing: 0px
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: center
+    font-size: 1.5em
+
+.text
+  font-size: 2.2em
+  font-weight: 500
+  letter-spacing: 2px
+  @media (max-width: $breakpoint-md - 1)
+    letter-spacing: 0px
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: center
+    font-size: 1.75em
+
+.text2
+  font-size: 2em
+  font-weight: 500
+  letter-spacing: 1px
+  @media (max-width: $breakpoint-md - 1)
+    letter-spacing: 0px
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: center
+    font-size: 1.5em
+
+.price
+  color scarlet-two
+
+.price-old
+  font-size: .7em
+  margin-left: 24px
+  text-decoration: line-through
+
+.button
+  margin-top: 2.8em
+  //padding-left: 3em
+  //padding-right: 3em
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: 1.8em
+    text-align: center
+
+.icon
+  display: inline-block
+  vertical-align: sub
+  background-image: url(sprites/sprite-ok.svg)
+  margin-right: 14px

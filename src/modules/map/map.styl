@@ -1,0 +1,207 @@
+.container
+  background-color beige-two
+  padding-top: 70px
+  @media (max-width: $breakpoint-sm - 1)
+    padding-top: 24px
+
+.title
+  text-align: center
+
+  &-inner
+    display: inline-block
+    font-size: 1.7em
+    border-bottom: 4px solid scarlet
+    padding-bottom: 3px
+    margin-bottom: 35px
+
+    @media (max-width: $breakpoint-sm - 1)
+      font-size: 1.2em
+
+.content
+  padding-bottom: 65px
+  @media (max-width: $breakpoint-sm - 1)
+    padding-bottom: 20px
+
+.col
+  text-align: center
+
+.contact
+  display: inline-block
+  padding-left: 98px
+  position: relative
+  font-weight: 300
+  text-align: left
+  @media (max-width: $breakpoint-sm - 1)
+    padding-left: 60px
+
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    left: 0
+    top: 8px
+    background: url(sprites/sprite-mail.svg)
+
+  &-sub
+    font-size: 1.1em
+    font-weight: 500
+
+.text
+  display: inline-block
+  vertical-align: middle
+  font-size: 1.2em
+  margin-right: 48px
+  @media (max-width: $breakpoint-sm - 1)
+    font-size: 1em
+    display: block
+    text-align: center
+    margin-right: 0
+    margin-bottom: 8px
+    margin-top: 12px
+
+.button
+  display: inline-block
+  vertical-align: middle
+  @media (max-width: $breakpoint-sm - 1)
+    display: block
+    text-align: center
+
+.map
+  position: relative
+
+.double
+  display: flex
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction: column
+
+.half
+  flex: 1
+  position: relative
+  min-width: 0
+
+.left
+  .label-wrapper
+    left: auto
+    right: 0
+    transform: none
+    @media (max-width: $breakpoint-sm - 1)
+      left: 50%
+      right: auto
+      transform: translateX(-50%)
+  .label-phones
+    margin-right: 16px
+    &:before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      background: url(sprites/sprite-phone-black.svg)
+      margin-right: 16px
+  .info
+    padding-right: 24px
+    @media (max-width: $breakpoint-sm - 1)
+      padding-right: 0
+  .info-row
+    justify-content: flex-end
+  .address
+    margin-right: 0
+
+.right
+  .label-wrapper
+    left: 0
+    transform: none
+    @media (max-width: $breakpoint-sm - 1)
+      left: 50%
+      transform: translateX(-50%)
+  .label-phones
+    margin-left: 16px
+    &:after
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      background: url(sprites/sprite-phone-black.svg)
+      margin-left: 16px
+  .info
+    padding-left: 24px
+    @media (max-width: $breakpoint-sm - 1)
+      padding-left: 0
+  .info-row
+    justify-content: flex-start
+  .address
+    margin-right: 0
+
+.label-wrapper
+  position: absolute
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 1
+  display: flex
+  align-items: center
+
+.label
+  padding: 7px 12px
+  letter-spacing: 1px
+  color: #ffffff
+  font-size: 17px
+  font-weight: 600
+  background: rgba(scarlet, .7)
+  border-radius: 0 0 5px 5px
+
+.label-phones
+  font-size: 15px
+  font-weight: 500
+  white-space: pre-wrap
+  @media (max-width: $breakpoint-sm - 1)
+    display: none
+
+.info
+  position: absolute
+  left: 0
+  bottom: 0
+  width: 100%
+  background: rgba(#fff, .8)
+  padding: 12px 0 4px
+  z-index: 1
+  font-size: .9em
+  @media (max-width: $breakpoint-sm - 1)
+    position: static
+
+  &-row
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 4px
+    @media (max-width: $breakpoint-sm - 1)
+      text-align: center
+      flex-direction: column
+      padding: 0 8px
+
+    &-small
+      display: none
+      @media (max-width: $breakpoint-sm - 1)
+        display: block
+
+.address
+  font-weight: 600
+  margin-right: 16px
+
+.phones
+  font-weight: 500
+  white-space: pre-wrap
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    background: url(sprites/sprite-phone-black.svg)
+    margin-right: 16px
+
+.js
+  height: 300px
+
+.star
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    background: url(sprites/sprite-star.svg)
+    margin-right: 12px

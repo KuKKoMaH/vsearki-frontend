@@ -14,5 +14,5 @@ mixin popup(id, title, text, button)
         input.popup-car(type='hidden' name='generation')
         input.popup-car(type='hidden' name='body')
         input.popup-car(type='hidden' name='count')
-        .popup-input-wrapper: input.popup-input(type='tel')
+        .popup-input-wrapper: input.popup-input(type='tel' name='phone')
         .popup-button: +button()=button

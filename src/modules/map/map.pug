@@ -1,0 +1,47 @@
+include ../button/button
+
+.map-container
+  .map-title: .map-title-inner Остались вопросы?
+  .w.map-content
+    .c.c6: .map-col
+      .map-contact
+        .map-contact-sub  Заявки по email#[br]mail@vseporogi.com
+        | круглосуточно и без выходных
+    .c.c6
+      .map-text Закажите#[br]обратный звонок
+      .map-button: +button('a', '#callback')(class='popup-opener') Обратный звонок
+
+  .map-map
+    #map.map-js
+    .map-label-wrapper
+      .map-label Самовывоз
+    .map-info
+      .map-info-row
+        .map-address г. Нижний Новго, ул. Пушкина, 4а
+        .map-phones (495) 567-09-80&nbsp;&nbsp;&nbsp;8 (985) 651-17-52
+      .map-info-row Пороги и арки Вы можете в отделении ТК Сдэк. Оплата при получении в пункте выдачи
+
+  .map-map.map-double
+    .map-half.map-left
+      #map1.map-js
+      .map-label-wrapper
+        .map-label-phones 8 (812) 969-91-75&nbsp;&nbsp;&nbsp;ПН-ПТ 10-19
+        .map-label Самовывоз
+      .map-info
+        .map-info-row.map-info-row-small
+          .map-phones 8 (812) 969-91-75&nbsp;&nbsp;&nbsp;ПН-ПТ 10-19
+        .map-info-row
+          .map-address Волхонское шоссе 4А
+        .map-info-row (напротив Завода Филип Моррис Ижора)
+    .map-half.map-right
+      #map2.map-js
+      .map-label-wrapper
+        .map-label Самовывоз
+        .map-label-phones ПН-ВС 10-21&nbsp;&nbsp;&nbsp;8 (812) 969-91-75
+      .map-info
+        .map-info-row.map-info-row-small
+          .map-phones ПН-ВС 10-21&nbsp;&nbsp;&nbsp;8 (812) 969-91-75
+        .map-info-row
+          .map-address Шафировский проспект, 10а
+        .map-info-row
+          .map-star Осмотр Вашего авто производится Бесплатно

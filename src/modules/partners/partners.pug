@@ -1,0 +1,46 @@
+include ../button/button
+
+#partners.partners-container
+  .w
+    .partners-head
+      .partners-title Сотрудничество
+      .partners-cta Станьте представителем#[br]нашей компании в своем регионе
+    .c.c6
+      .partners-text Приглашаем к партнерскому сотрудничеству:
+      ul.partners-bullets
+        li Онлайн и офлайн продавцов автозапчастей
+        li СТО и частные кузовные сервисы
+        li Оптовые и розничные сети
+
+      .partners-info Для Вас действуют специальные гибкие условия#[br]по поставке запчастей и работе с клиентами
+
+    .c.c6
+      form
+        .partners-form
+          .partners-col
+            .partners-input-wrapper: input.partners-input(placeholder='Ваше имя')
+            .partners-input-wrapper: input.partners-input(placeholder='Телефон')
+            .partners-input-wrapper: input.partners-input(placeholder='Email')
+          .partners-col
+            .partners-input-wrapper: select.form-select(data-placeholder='Ваш регион' data-type='regions')
+            .partners-input-wrapper: textarea.partners-input.partners-textarea(placeholder='Ваш комментарий')
+
+        .partners-form-footer
+          +button(input).partners-button Отправить заявку
+          .partners-note Заполните форму и мы отправим Вам на почту предложение о партнерстве
+
+    .partners-suppliers
+      .partners-suppliers-title Поставщикам
+      .partners-suppliers-item
+        |Мы заинтересованы в#[br]
+        |сотрудничестве с оптовыми#[br]
+        |поставщиками авто запчастей
+      .partners-suppliers-item
+        |Отправляйте предложения на#[br]
+        |#[a(href='#') post@vseporogi.com] или оставьте#[br]
+        |номер телефона для связи
+      .partners-suppliers-contacts
+        +button('a', '#callback')(class='popup-opener') Отправить
+        .partners-suppliers-note Мы свяжемся с вами
+
+  a.partners-link(href='#partners') Сотрудничество

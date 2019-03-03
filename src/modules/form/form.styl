@@ -1,16 +1,25 @@
 //@import "selectize/dist/css/selectize.css"
 
 .container
-  height: 0
-
-  @media (max-width: $breakpoint-sm - 1)
-    height: auto
+  padding-bottom: 30px
+  //height: 0
+  //
+  //@media (max-width: $breakpoint-sm - 1)
+  //  height: auto
 
   select
     display: none
 
 .wrapper
   margin-top: -250px
+
+  &-city
+    margin-top: -150px
+
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: 0
+
+.content
   border-radius 4px
   background-color white
   border-top: 6px solid white-two
@@ -18,16 +27,19 @@
   padding: 35px
   position: relative
   z-index: 1
-
-  &-city
-    margin-top: -150px
-
   @media (max-width: $breakpoint-sm - 1)
-    margin-top: 0
-    padding: 25px 0
+    padding: 25px 15px
     border-radius 0
     box-shadow: none
+    margin: 0 -15px
 
+.content-noborder
+  border-top: 0
+  border-radius: 0 0 4px 4px
+
+.content-bullets
+  border-radius: 0 0 4px 4px
+  border-top: 0
 
 .title
   font-size: 1.6em
@@ -76,6 +88,7 @@
     padding: 16px 40px 16px 20px
     border-radius 3px
     border solid 1px #dfdfdf
+    background: #ffffff
     font-size: .8em
     position: relative
     white-space: nowrap

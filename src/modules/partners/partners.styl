@@ -1,0 +1,294 @@
+.container
+  padding: 4em 0
+  background: url(modules/partners/bg.jpg)
+  background-size: cover
+  color: #ffffff
+
+  @media (max-width: $breakpoint-md - 1)
+    br
+      display: none
+  @media (max-width: $breakpoint-sm - 1)
+    padding: 2em 0px
+
+  :global
+    .wpcf7-response-output
+      text-align: center
+
+.head
+  display: flex
+  align-items: center
+  margin-bottom: 4em
+  @media (max-width: $breakpoint-md - 1)
+    margin-bottom: 2em
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction: column
+    text-align: center
+
+  &:before
+    content: ''
+    display: block
+    //position: absolute
+    background: url(modules/partners/partners.png) 50% 50% no-repeat
+    background-size: contain
+    width: 101px
+    height: 69px
+    left: 0
+    top: 0
+    margin-right: 2em
+    @media (max-width: $breakpoint-lg - 1)
+      width: 70px
+    @media (max-width: $breakpoint-sm - 1)
+      margin-right: 0
+
+
+.title
+  font-size: 3.4em
+  letter-spacing: 1px
+  line-height: 1
+  margin-right: 1em
+  @media (max-width: $breakpoint-lg - 1)
+    font-size: 2.4em
+  @media (max-width: $breakpoint-md - 1)
+    font-size: 2em
+  @media (max-width: $breakpoint-sm - 1)
+    margin-bottom: 10px
+    font-size: 1.4em
+    margin-right: 0
+
+
+.cta
+  font-size: 1.5em
+  line-height: 1.3
+  @media (max-width: $breakpoint-lg - 1)
+    font-size: 1.2em
+  @media (max-width: $breakpoint-md - 1)
+    font-size: 1.2em
+  @media (max-width: $breakpoint-sm - 1)
+    font-size: 1em
+
+.text
+  font-size: 1.3em
+  margin-bottom: 1em
+  @media (max-width: $breakpoint-lg - 1)
+    font-size: 1em
+
+.bullets
+  margin: 0
+  padding: 0
+  list-style: none
+  font-size: 1.3em
+  margin-bottom: 1em
+  @media (max-width: $breakpoint-lg - 1)
+    font-size: 1em
+
+  li
+    margin-bottom: 6px
+
+    &:before
+      content: ''
+      display: inline-block
+      vertical-align: middle
+      background: url(modules/partners/sprite-check-circle.svg)
+      margin-right: 12px
+
+.info
+  font-size: 1.1em
+  padding-left: 33px
+  position: relative
+  font-weight: 200
+  @media (max-width: $breakpoint-lg - 1)
+    font-size: 1em
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 7px
+    display: inline-block
+    vertical-align: middle
+    background: url(modules/partners/sprite-star.svg)
+    margin-right: 12px
+
+
+.bullet
+  font-size: 1em
+  font-weight: 300
+  position: relative
+  padding-left: 1em
+
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    width: 5px
+    height: 5px
+    border-radius: 50%
+    background: #d83b4c
+    left: 0
+    top: 11px
+
+.form
+  display: flex
+  margin-top: 12px
+  @media (max-width: $breakpoint-md - 1)
+    flex-direction: column
+  @media (max-width: $breakpoint-sm - 1)
+    margin: 12px -15px 0
+    padding: 18px 22px
+    border-radius: 0
+
+.col
+  flex: 1
+  margin: 0 3px
+
+  .input-wrapper:last-child
+    margin-bottom: 0
+    @media (max-width: $breakpoint-md - 1)
+      margin-bottom: 6px
+
+
+.input-wrapper
+  margin-bottom: 6px
+  position: relative
+  :global
+    .wpcf7-not-valid-tip
+      top: auto;
+      bottom: 0;
+      left: 5px;
+      font-size: 10px
+
+.input
+  background: #ffffff
+  font-size: .8em
+  line-height: 1.2em
+  padding: 18px 20px
+  display: block
+  border-radius: 3px
+  border: solid 1px #ebe5dd
+  width: 100%
+  font-weight: 300
+
+  @media (max-width: $breakpoint-sm - 1)
+    padding-top: 8px
+    padding-bottom: 8px
+
+.textarea
+  resize: none
+  max-width: 100%
+  min-width: 100%
+  height: 116px
+  @media (max-width: $breakpoint-md - 1)
+    height: 120px
+
+.form-footer
+  margin-top: 40px
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: 16px
+
+.button
+  float: right
+  margin-left: 2em
+  @media (max-width: $breakpoint-md - 1)
+    float: none
+    margin: 0 auto 1em
+    display: block
+
+.note
+  font-size: 1em
+  line-height: 1.7
+  font-weight: 200
+
+.suppliers
+  border-top: 1px solid rgba(#fff, .15)
+  margin-top: 60px
+  padding-top: 55px
+  display: flex
+  align-items: center
+
+  @media (max-width: $breakpoint-lg - 1)
+    margin-top: 40px
+    padding-top: 30px
+    flex-direction: column
+
+    br
+      display: none
+
+  &:before
+    content: ''
+    display: block
+    //position: absolute
+    background: url(modules/partners/suppliers.png) 50% 50% no-repeat
+    background-size: contain
+    width: 43px
+    height: 36px
+    left: 0
+    top: 0
+    margin-right: 2em
+    @media (max-width: $breakpoint-lg - 1)
+      margin: 0
+
+  &-title
+    font-size: 2.2em
+    letter-spacing: 1px
+    @media (max-width: $breakpoint-lg - 1)
+      text-align: center
+      margin-bottom: 18px
+    @media (max-width: $breakpoint-sm - 1)
+      font-size: 1.6em
+
+  &-item
+    margin-left: 30px
+    line-height: 1.7
+    font-weight: 300
+    @media (max-width: $breakpoint-lg - 1)
+      margin-left: 0
+      text-align: center
+
+    a
+      color: #ff1f38
+      font-weight: 600
+      text-decoration: none
+
+  &-contacts
+    flex: 1
+    text-align: center
+    @media (max-width: $breakpoint-lg - 1)
+      margin-top: 18px
+
+  &-note
+    margin-top: 18px
+    font-size: .8em
+    font-weight: 200
+
+.link
+  position: fixed
+  top: 50%
+  background: #cd2222
+  border-radius: 3px 3px 0 0
+  border: 0
+  padding: 12px 24px
+  z-index: 2
+  color: #ffffff
+  text-decoration: none
+  transform-origin: 100% 50%
+  right: 25px
+  transform: rotate(-90deg)
+  margin-top: -60px
+  anim()
+  @media (max-width: $breakpoint-sm - 1)
+    display: none
+
+
+  &:hover
+    background: #bd1e1e
+
+  &:after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    background: url(modules/partners/partners-small.png)
+    width: 31px
+    height: 21px
+    margin-left: 12px
+    transform: rotate(90deg)
+

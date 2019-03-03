@@ -4,19 +4,24 @@ include ../../modules/popup/popup
 
 block body
   include ../../modules/header/header
+
   include ../../modules/slide/slide
-  +form()
+  include ../../modules/slide2/slide2
+
+  +form()(style='background: #3c3b3b')
   include ../../modules/advantages/advantages
   include ../../modules/about/about
   include ../../modules/prices/prices
-  +form(true)
+  +form(true)(style='background:#f9f6f2')
   include ../../modules/popular/popular
   include ../../modules/process/process
   include ../../modules/gallery/gallery
   include ../../modules/testimonials/testimonials
   include ../../modules/delivery/delivery
   include ../../modules/faq/faq
+  include ../../modules/partners/partners
   include ../../modules/info/info
+  include ../../modules/map/map
   include ../../modules/footer/footer
 
   .index-popup
@@ -31,4 +36,10 @@ block body
       model: '../brands.json',
       generation: '../brands.json',
       body: '../brands.json'
+    };
+
+    var MAPS = {
+      map: [53.189798, 45.039265],
+      map1: [53.189798, 45.039265],
+      map2: [53.189798, 45.039265]
     };
