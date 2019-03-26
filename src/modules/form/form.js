@@ -24,15 +24,17 @@ var selectizeConfig = {
     var $child = form.find('[data-type="' + child + '"]');
     if (!$child.length) return;
 
-    if(!title) $child[0].selectize.disable();
+    if (!title) $child[0].selectize.disable();
     clearChilds(form, type);
 
     var value = this.options[title];
-    if(!value) return;
-
+    if (!value) return;
 
     $child[0].selectize.load(function (cb) {
-      $.get(CATALOG_URL[child], {parent: value.id}, cb);
+      $.get(CATALOG_URL[child], { parent: value.id }, function (res) {
+        $child[0].selectize.clearOptions();
+        cb(res);
+      });
     });
     $child[0].selectize.enable();
   }
@@ -75,7 +77,7 @@ $.get(CATALOG_URL.body, function (res) {
   })
 });
 
-function getForm ($form) {
+function getForm($form) {
   var fields = $form.serializeArray();
   var res = {};
   for (var i = 0; i < fields.length; i++) {
@@ -84,7 +86,7 @@ function getForm ($form) {
   return res;
 }
 
-function formatText (form) {
+function formatText(form) {
   if ($.isEmptyObject(form)) return '';
   var text = 'Вы выбрали: ';
   if (form.count) text += form.count;
@@ -96,7 +98,7 @@ function formatText (form) {
   return text;
 }
 
-function clearChilds (form, type) {
+function clearChilds(form, type) {
   var child = type;
   while (child = parentage[child]) {
     var $child = form.find('[data-type="' + child + '"]');
