@@ -1,0 +1,331 @@
+.container
+  padding-top: 60px
+  padding-bottom: 300px
+  //height 100%
+  //min-height: 650px
+  background-color beige-two
+  position: relative
+  overflow: hidden
+  color greyish-brown
+
+  @media (max-width: $breakpoint-sm)
+    padding-top: 80px
+
+    height: auto
+    min-height: auto
+    padding-bottom: 2em
+
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+  &:before
+    background-image: url(modules/slide3/1.png)
+    width: 382px
+    height: 186px
+    right: 50%
+    margin-right: 360px
+    margin-top: -110px
+
+  &:after
+    background-image: url(modules/slide3/2.png)
+    width: 346px
+    height: 230px
+    left: 50%
+    margin-top: -110px
+    margin-left: 360px
+
+    @media (max-width: $breakpoint-sm - 1)
+      &:before, &:after
+        background-image: none
+
+.content
+  position: relative
+  z-index: 1
+
+.center
+  //margin-top: -90px
+  margin-top: 31px
+  display: flex;
+  flex-direction column
+  align-items center
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: 50px
+
+.mail
+  font-size: .9em
+  font-weight: 600
+  color: black
+
+.work
+  margin-top: 12px
+  font-size: .8em
+  display: inline-block
+  text-align: left
+
+  &:before
+    content: ''
+    float: left
+    display: block
+    margin-top: 3px
+    margin-right: 12px
+    background-image: url(sprites/sprite-24.svg)
+
+.left
+  padding-top: 30px
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: center
+
+.label
+  background: url(sprites/sprite-label.svg);
+  box-shadow: 0px 3px 6px #000000 29;
+  padding-top: 73px
+  text-align: center
+  font-size: 36px
+  color: #FFFFFF
+  margin: 0 auto
+  @media (max-width: $breakpoint-sm - 1)
+    position: absolute;
+    width: auto;
+    height: auto;
+    background: none;
+    color: #3c3b3b
+    left: 50%
+    transform translateX(-50%)
+    margin-top: 87px
+
+.right
+  padding-top: 30px
+  text-align: center
+  font-size: .8em
+
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: 1em
+
+.hours
+  display: inline-block
+  text-align: left
+  margin-bottom: 10px
+
+.button
+  display: block
+  margin: 0 auto
+  font-size: 1em
+  font-weight: 500
+  background-color: transparent
+  border-radius 64px
+  border solid 1px #979797
+  padding: 10px 0
+  max-width: 220px
+  color: black
+  text-decoration: none
+  anim()
+
+  &:hover
+    background: #979797
+    color: white
+
+  &:active
+    background: darken(#979797, 10%)
+
+.text
+  text-align: center
+
+  @media (max-width: $breakpoint-sm - 1)
+    font-size: .8em
+
+.title
+  font-size: 50px
+  font-weight: 600
+  line-height: 1
+  margin: 0
+  padding-bottom: 9px
+  border-bottom: 2px solid #CE2323
+  margin-bottom: 12px
+  @media (max-width: $breakpoint-md - 1)
+    display: none;
+
+.subtitle
+  font-size: 20px
+  line-height: 1.2
+  font-weight: 400
+  color: #3C3B3B
+  margin-bottom: 25px
+  @media (max-width: $breakpoint-sm - 1)
+    margin-bottom: 8px
+
+.prices-wrapper
+  @media (max-width: $breakpoint-sm - 1)
+    background: #ffffff
+    box-shadow: 0px 3px 6px rgba(#000000, .29);
+    width: 100%
+    display: flex;
+    justify-content center
+    padding: 20px 0 25px
+    margin-bottom: 19px
+
+.prices
+  display: flex;
+  align-items center
+  justify-content center
+  line-height: 1.2
+  margin-bottom: 36px
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction column
+    margin: 0
+
+.price
+  text-align: center;
+  @media (max-width: $breakpoint-sm - 1)
+    display: flex;
+    flex-direction row-reverse
+    align-items center
+    justify-content flex-start
+    width: 100%
+
+.value
+  @media (max-width: $breakpoint-sm - 1)
+    display: flex;
+    flex-direction column-reverse
+    text-align: right;
+
+.old
+  text-decoration: line-through;
+  font-size: 20px
+  @media (max-width: $breakpoint-sm - 1)
+    margin-top: -4px
+    font-size: 16px
+
+.new
+  font-size: 50px
+  font-weight: 500;
+  color: #BC362E;
+  @media (max-width: $breakpoint-sm - 1)
+    font-size: 35px
+
+  :global(.r)
+    font-size: 26px
+    @media (max-width: $breakpoint-sm - 1)
+      font-size: 15px
+
+.name
+  @media (max-width: $breakpoint-sm - 1)
+    margin-right: 40px
+    position: relative;
+
+    &:before
+      content: ''
+      display: block;
+      position: absolute;
+      top: 19px
+      left: 100%
+      margin-left: 10px;
+      width: 18px
+      height: 2px
+      background: #CE2323
+      border-radius: 2px
+
+    .note
+      text-align: right;
+
+.name-name
+  display: none;
+  @media (max-width: $breakpoint-sm - 1)
+    display: block;
+    font-size: 30px
+    font-weight: 500
+    text-align: right;
+
+.note
+  font-size: 14px
+  text-align: center;
+
+.date
+  width: 395px
+  text-align: center;
+  @media (max-width: $breakpoint-sm - 1)
+    display: none;
+
+.date-text
+  font-size: 20px
+
+.date-date
+  font-size: 36px
+
+.bullets-wrapper
+  width: 100%
+  max-width 1068px
+
+  @media (max-width: $breakpoint-sm - 1)
+    display: flex;
+    justify-content center
+    width: auto;
+
+.bullets
+  display: flex;
+  justify-content space-between
+  width: 100%
+  margin: 0 -7px
+  @media (max-width: $breakpoint-sm - 1)
+    flex-direction column
+    margin: 0 38px
+
+.bullet
+  flex: 1
+  max-width: 314px
+  font-size: 16px
+  font-weight: 500
+  line-height: 1.2
+  padding: 0 7px
+  @media (max-width: $breakpoint-sm - 1)
+    background-color: transparent;
+    box-shadow none
+    margin: 0 0 13px
+    padding: 0
+    max-width: none
+
+    .note
+      display contents
+      font-size: 16px
+
+.bullet-area
+  background: #ffffff
+  box-shadow: 0px 3px 6px rgba(#000000, .29);
+  border-radius: 4px;
+  height: 62px
+  display: flex;
+  align-items center
+  justify-content flex-start
+  padding: 0 40px
+  margin: 0 0 22px
+  @media (max-width: $breakpoint-md - 1)
+    padding: 0 0 0 15px
+  @media (max-width: $breakpoint-sm - 1)
+    background-color: transparent;
+    box-shadow none
+    margin: 0
+    padding: 0
+    height: auto;
+    display contents
+
+.icon
+  flex-shrink 0
+  margin-right: 11px
+  @media (max-width: $breakpoint-sm - 1)
+    display: none;
+
+.star
+  background: url(sprites/sprite-star-outline.svg)
+
+.box
+  background: url(sprites/sprite-box.svg)
+
+.wallet
+  background: url(sprites/sprite-wallet.svg)
+
+.aster
+  display contents
+  @media (max-width: $breakpoint-sm - 1)
+    display: none;

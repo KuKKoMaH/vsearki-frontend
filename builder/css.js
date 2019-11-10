@@ -19,8 +19,10 @@ var config = require('./config');
 
 var extensions = {
   images: ['.jpg', '.jpeg', '.gif', '.png', '.svg'],
-  fonts:  ['.eot', '.woff', '.woff2']
+  fonts:  ['.eot', '.woff', '.woff2'],
 };
+
+var now = +(new Date());
 
 /**
  * @typedef {Object} moduleCssInfo - объект с результатом преобразования css-модуля
@@ -33,9 +35,9 @@ var extensions = {
  * @param {String} filePath - путь до файла
  * @return {Promise<moduleCssInfo>}
  * */
-function convert( filePath ) {
+function convert(filePath) {
   var module;
-  return new Promise(( resolve, reject ) => {
+  return new Promise((resolve, reject) => {
     utils.readFile(filePath).then(css => {
       var fileInfo = path.parse(filePath);
 
@@ -44,25 +46,25 @@ function convert( filePath ) {
           generateScopedName: process.env.NODE_ENV === 'production'
                                 ? '[hash:base64:5]'
                                 : '[path][local]',
-          getJSON:            function ( cssFileName, json ) {
+          getJSON:            function (cssFileName, json) {
             module = json;
-          }
+          },
         }),
         atImport(), // stylus не поддерживает импорт css файлов
       ];
       stylus(css)
         .import(path.resolve(config.basePath, 'styles', 'index.styl'))
-        .render(function ( err, css ) {
+        .render(function (err, css) {
           if (err) return reject(err);
           postcss(plugins).process(css, { from: filePath, to: config.basePath })
             .then(result => {
               resolve({ module, css: result.css, name: fileInfo.name });
             }, err => {
-              reject(err)
+              reject(err);
             });
         });
     });
-  })
+  });
 }
 
 /**
@@ -70,41 +72,49 @@ function convert( filePath ) {
  * @param {Array<String>} styles - массив css файлов
  * @return {Promise} result css
  */
-function combine( styles ) {
+function combine(styles) {
   var css = styles.join('\n');
   var plugins = [
     discardDuplicates(),
     sprites({
       stylesheetPath: config.cssPath,
       spritePath:     config.imgPath,
-      filterBy:       function ( info ) {
-        return new Promise(( resolve, reject ) => {
+      filterBy:       function (info) {
+        return new Promise((resolve, reject) => {
           if (info.url.indexOf(path.sep + 'sprite-') !== -1) {
             resolve(info.path);
           } else {
             reject();
           }
-        })
+        });
       },
       hooks:          {
-        onUpdateRule: function ( rule, token, image ) {
+        onUpdateRule:      function (rule, token, image) {
           // Use built-in logic for background-image & background-position
           updateRule(rule, token, image);
 
-          ['width', 'height'].forEach(function ( prop ) {
+          ['width', 'height'].forEach(function (prop) {
             rule.insertAfter(rule.last, postcss.decl({
               prop:  prop,
-              value: image.coords[prop] + 'px'
+              value: image.coords[prop] + 'px',
             }));
           });
-        }
-      }
+        },
+        onSaveSpritesheet: function (opts, spritesheet) {
+          return [
+            opts.spritePath + '/' + 'sprite',
+            now,
+            spritesheet.extension,
+          ].join('.');
+        },
+      },
     }),
+
     postcssCopy({
       src:      config.basePath,
       dest:     config.imgPath,
       // template: '[hash].[ext][query]',
-      template: function ( fileMeta ) {
+      template: function (fileMeta) {
         var src = fileMeta.filename;
         var dir = fileMeta.src;
         var ext = path.extname(fileMeta.filename);
@@ -120,11 +130,11 @@ function combine( styles ) {
         }
         return destPath;
       },
-      relativePath( dirname, fileMeta, result, options ) {
+      relativePath(dirname, fileMeta, result, options) {
         return config.cssPath;
-      }
+      },
     }),
-    calc()
+    calc(),
   ];
 
   if (process.env.NODE_ENV === 'production') {
@@ -133,23 +143,23 @@ function combine( styles ) {
     const minWidthRegexp = /\(min-width:(.*?)px\)/;
     const maxWidthRegexp = /\(max-width:(.*?)px\)/;
     plugins.push(mqpacker({
-      sort: ( a, b ) => {
+      sort: (a, b) => {
         const findMinA = minWidthRegexp.exec(a);
         const findMinB = minWidthRegexp.exec(b);
         // Сортировка по увелиичению min-width. Правила без min-width всегда нииже
         if (findMinA && !findMinB) return -1;
         if (findMinB && !findMinA) return 1;
-        if (findMinA && findMinB && +findMinA[1] !== +findMinB[1] ) return +findMinA[1] > +findMinB[1] ? 1 : -1;
+        if (findMinA && findMinB && +findMinA[1] !== +findMinB[1]) return +findMinA[1] > +findMinB[1] ? 1 : -1;
 
         const findMaxA = maxWidthRegexp.exec(a);
         const findMaxB = maxWidthRegexp.exec(b);
         // сортировка по убыванию max-width. Правила без max-width всегда выше.
         if (findMaxA && !findMaxB) return 1;
         if (findMaxB && !findMaxA) return -1;
-        if (findMaxA && findMaxB && +findMaxA[1] !== +findMaxB[1] ) return +findMaxA[1] > +findMaxB[1] ? -1 : 1;
+        if (findMaxA && findMaxB && +findMaxA[1] !== +findMaxB[1]) return +findMaxA[1] > +findMaxB[1] ? -1 : 1;
         // если не удалось сравнить min-width и max-width - не трогать
         return 0;
-      }
+      },
     }));
   }
 
@@ -159,11 +169,11 @@ function combine( styles ) {
       result => utils.writeFile(path.resolve(config.cssPath, 'style.css'), result.css),
       err => {
         throw err;
-      }
+      },
     );
 }
 
 module.exports = {
   convert,
-  combine
+  combine,
 };
