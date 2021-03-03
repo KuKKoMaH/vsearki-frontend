@@ -30,7 +30,7 @@
     "postcss-modules": "^0.5.2",
     "postcss-sprites": "^4.0.0",
     "posthtml": "^0.9.1",
-    "pug": "^2.0.0-beta6",
+    "pug": "^3.0.1",
     "stylus": "^0.54.5",
     "webpack": "^1.13.3"
   },
